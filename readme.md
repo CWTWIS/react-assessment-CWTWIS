@@ -88,13 +88,13 @@ async function getMe() {
 
 ### 1A : Project Setup (10pts)
 
-- [ ] Create Project with Create React App or ViteJs
-- [ ] Clean up unused files and code
-- [ ] Install dependencies or packages that you need for this project
-- [ ] Pick some CSS Framework and Install eg. Bootstrap, Tailwind, Scss, Vanilla css or MUI
+- [x ] Create Project with Create React App or ViteJs
+- [x ] Clean up unused files and code
+- [x ] Install dependencies or packages that you need for this project
+- [x ] Pick some CSS Framework and Install eg. Bootstrap, Tailwind, Scss, Vanilla css or MUI
 - [ ] Setup Well-organized Folder Structure
-- [ ] Using Git and Github for Version Control System
-- [ ] Using Comand Line for run project
+- [x ] Using Git and Github for Version Control System
+- [x ] Using Comand Line for run project
 
 ### 1B : Build UI with React Component (20pts)
 
@@ -112,11 +112,11 @@ async function getMe() {
 
 ### 2A : Auth and Login (15pts)
 
-- [ ] Login with email and password
-- [ ] Can submit form with Enter key or Button
+- [x ] Login with email and password
+- [x ] Can submit form with Enter key or Button
 - [ ] Implement State Management for Login Page
 - [ ] Connect to API
-- [ ] Can Login
+- [x ] Can Login
 
 ### 2B : TodoList (35pts)
 

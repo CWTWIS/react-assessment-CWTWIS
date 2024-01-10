@@ -1,0 +1,101 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* LOG IN */
+.DefaultDiv{
+  margin: auto;
+  background: #1E1F25;
+  width: 50%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-radius: 20px;
+}
+.DefaultDiv > h1 {
+  color: white;
+}
+label{
+  color: #9494B8;
+  font-weight: bold;
+}
+.Form {
+  display: flex; 
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+.Form > input {
+  background-color: #1E1F25;
+  border-style: none;
+  border-bottom: 1px solid #29292F;
+  color: white;
+}
+.Form > button {
+  margin-top: 50px;
+}
+
+button{
+  min-height: 40px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  background-color: #29292F;
+}
+button:hover{
+  background-color: white;
+  color:#29292F ;
+}
+
+
+/* My todo page */
+.Title{
+  display: flex;
+  justify-content: space-between;
+}
+.Title > h1{
+  color: white;
+}
+
+/* Head */
+/* Input */
+/* List */
+.listTodo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.listTodo__content{
+  display: flex;
+  gap: 10px;
+  & > h3 {
+    color: white;
+  }
+}
+/* Button */
+.listTodo__button{
+  display: flex;
+  gap: 10px;
+}
+
+
+/* Todo Input */
+.error__addNewTask{
+    color: red;
+  }
