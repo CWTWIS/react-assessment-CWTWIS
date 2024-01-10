@@ -6,8 +6,8 @@ function TodoList() {
   const {allTodo} = useMyTodo()
   console.log(allTodo);
   return (
-    <ul>{allTodo.map((todo, id) => (
-       <TodoItem key={todo.id} id={id} todo={todo}/>
+    <ul>{allTodo.map((todo) => (
+       <TodoItem key={todo.id} todo={todo}/>
     ))}
     </ul>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useMyTodo } from '../context/MyTodoContext'
-function TodoForm({oldTodo}, {id}) {
+function TodoForm({oldTodo}) {
     const {onClose, editTodoById, addTodo, task, setIsError} = useMyTodo();
     const [text, setText] = useState(oldTodo?.task || '')
 

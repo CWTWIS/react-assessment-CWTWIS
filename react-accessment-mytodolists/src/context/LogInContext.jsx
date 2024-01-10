@@ -59,6 +59,8 @@ function LogInContextProvider({ children }) {
     .then((data)=>{
       console.log(data);
       setUser(data.user)
+      // console.log(data.user);
+      // console.log(data.user.firstName);
       localStorage.setItem("token", data.accessToken)
     })
     .catch((err)=>{
@@ -77,7 +79,7 @@ function LogInContextProvider({ children }) {
   };
 
   //pack
-  const sharedObj = { user, setUser, LogOut, LogIn, setLoginSuccess, LoginSuccess };
+  const sharedObj = { user, setUser, LogOut, LogIn, setLoginSuccess, LoginSuccess};
 
   return (
     <LogInContext.Provider value={sharedObj}>{children}</LogInContext.Provider>

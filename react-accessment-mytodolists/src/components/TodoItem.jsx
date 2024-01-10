@@ -1,8 +1,14 @@
 import React from "react";
 import TodoForm from "./TodoForm";
 import { useMyTodo } from "../context/MyTodoContext";
-function TodoItem({todo}, {id}) {
-    const {isEdit, handleEdit} = useMyTodo()
+function TodoItem({todo}) {
+    console.log("Todo at todo item", todo);
+    const {isEdit, handleEdit, editTodoById, deleteTodoById} = useMyTodo()
+    const updateStatus = () => {
+        const updateTodo = {...todo, status:!todo.status}
+        editTodoById(todo.id, updateTodo)
+    }
+
   return (
     <>   
         {!isEdit ? (
@@ -15,7 +21,7 @@ function TodoItem({todo}, {id}) {
                 </div>
 
                 <div className="TodoItem__list__button">
-                <button>x</button>
+                <button onClick={ ()=> deleteTodoById(todo.id)}>x</button>
                 </div>
             </div>
             </div>
@@ -24,7 +30,7 @@ function TodoItem({todo}, {id}) {
         (
             <div>
                 <div>
-                    <TodoForm oldTodo={todo} id={id}/>
+                    <TodoForm oldTodo={todo}/>
                 </div>
             </div>
         )}

@@ -1,8 +1,13 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { useLogIn } from "./LogInContext";
 
 const MyTodoContext = createContext();
 function MyTodoContextProvider({ children }) {
+  const {user, LogIn} = useLogIn()
+  console.log(user,"================");
+  // console.log(user.firstName);
+  // console.log(user.lastName);
   //set state
   const [task, setTask] = useState("");
 
@@ -47,7 +52,12 @@ function MyTodoContextProvider({ children }) {
     if (task.trim() === ""){
       setIsError(true)
     } else {
-      addTodo({task: task, status: false})
+      addTodo({
+        task: task, 
+        status: false,
+        firstname:user.firstName,
+        lastname: user.lastName, 
+      })
       setTask('')
     }
   };
@@ -70,21 +80,21 @@ function MyTodoContextProvider({ children }) {
   //       onClose()
   // };
 
-  const handleEdit = () => {
-    setIsEdit(true)
-  }
-  const onClose = () => {
-    setIsEdit(false)
-  }
+  const handleEdit = () => setIsEdit(true)
+  const onClose = () => setIsEdit(false)
 
- 
+
+
   // axios fetch
   const getAllTodo = async() => {
     try{
-      //set firstname = Chawanrat
-      //set lastname = Wisitphongphiboon
-      const res = await axios.get('https://express-todo-klut.onrender.com/todo/?firstname=Chawanrat&lastname=Wisitphongphiboon')
-      console.log(res);
+      //======HARD CODE URL======
+      // firstname = Hello
+      // lastname =  world
+      const res = await axios.get('https://express-todo-klut.onrender.com/todo/?firstname=Hello&lastname=world')
+      // console.log("USER.FIRSTNAME", user.firstName);
+      // const res = await axios.get(`https://express-todo-klut.onrender.com/todo/?firstname=${user.firstName}&lastname=${user.Name}`)
+      console.log("resss getttt hereee", res);
       console.log(res.data);
 
       setAllTodo(res.data)
@@ -104,6 +114,7 @@ function MyTodoContextProvider({ children }) {
         const res = await axios.post('https://express-todo-klut.onrender.com/todo/', newTodo)
         console.log(res, "res");
         console.log(res.data);
+        console.log(`${newTodo.firstname} + ${newTodo.lastname}`);
         setAllTodo((curr) => [res.data, ...curr])
       } catch (err){
         console.log(err);
@@ -124,7 +135,7 @@ function MyTodoContextProvider({ children }) {
 
     const editTodoById = async (id, newTodo) => {
       try{
-        const res = await axios.patch('https://express-todo-klut.onrender.com/todo/update/:id', newTodo)
+        const res = await axios.patch(`https://express-todo-klut.onrender.com/todo/update/:${id}`, newTodo)
         const newTodoList = [...allTodo]
         const foundedId = newTodoList.findIndex((todo)=>todo.id === id)
         if (foundedId !== -1){
@@ -137,7 +148,17 @@ function MyTodoContextProvider({ children }) {
       }
     }
  
-  // handle delete axios 
+  // handle delete axios
+  const deleteTodoById = async(id) => {
+    try{
+      await axios.delete(`https://express-todo-klut.onrender.com/todo/delete/:${id}`)
+      console.log('delete success');
+      setAllTodo((cur)=>[...cur].filter((todo)=>todo.id !== id))
+    }catch(error){
+      console.log(error);
+      console.log('delete fail');
+    }
+  }
 
 
 
@@ -150,7 +171,7 @@ function MyTodoContextProvider({ children }) {
     isError, setIsError, 
     isEdit,handleEdit,
     onClose,
-    addTodo, editTodoById,
+    addTodo, editTodoById, deleteTodoById,
   };
   return (
     <MyTodoContext.Provider value={sharedObj}>
