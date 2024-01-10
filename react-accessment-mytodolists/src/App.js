@@ -2,10 +2,10 @@ import LoginPage from "./components/LoginPage";
 import MyTodoPage from "./components/MyTodoPage";
 import { useLogIn } from "./context/LogInContext";
 function App() {
-  const {LoginSuccess} = useLogIn()
+  const {user} = useLogIn()
   return (
     <div className="App"> 
-      {!LoginSuccess? (<LoginPage/>) : (<MyTodoPage/>)}
+      {!user? (<LoginPage/>) : (<MyTodoPage/>)}
       
       {/* <LoginPage/>
       <MyTodoPage/> */}

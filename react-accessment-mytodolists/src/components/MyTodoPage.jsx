@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLogIn } from '../context/LogInContext'
 import TodoInPut from './TodoInPut'
-import TodoItem from './TodoItem'
+import TodoList from './TodoList'
 // import MyTodoContextProvider from '../context/MyTodoContext'
 
 function MyTodoPage() {
@@ -13,7 +13,7 @@ function MyTodoPage() {
             <TodoInPut/>
 
             {/* Todo Item */}
-            <TodoItem/>
+            <TodoList/>
             <button onClick={()=>LogOut()}><h2>LOG OUT</h2></button>
         </div>
     // </MyTodoContextProvider>

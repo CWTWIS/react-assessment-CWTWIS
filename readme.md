@@ -114,8 +114,8 @@ async function getMe() {
 
 - [x ] Login with email and password
 - [x ] Can submit form with Enter key or Button
-- [ ] Implement State Management for Login Page
-- [ ] Connect to API
+- [x ] Implement State Management for Login Page
+- [x ] Connect to API
 - [x ] Can Login
 
 ### 2B : TodoList (35pts)

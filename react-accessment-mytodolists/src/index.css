@@ -76,12 +76,12 @@ button:hover{
 /* Head */
 /* Input */
 /* List */
-.listTodo{
+.TodoItem__list{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.listTodo__content{
+.TodoItem__list__content{
   display: flex;
   gap: 10px;
   & > h3 {
@@ -89,7 +89,7 @@ button:hover{
   }
 }
 /* Button */
-.listTodo__button{
+.TodoItem__list__button{
   display: flex;
   gap: 10px;
 }

@@ -1,25 +1,37 @@
 import React from "react";
-import { UseMyTodo } from "../context/MyTodoContext";
-
-function TodoItem() {
-  const {task} = UseMyTodo()
+import TodoForm from "./TodoForm";
+import { useMyTodo } from "../context/MyTodoContext";
+function TodoItem({todo}, {id}) {
+    const {isEdit, handleEdit} = useMyTodo()
   return (
-    <div>
-      <h3>List</h3>
+    <>   
+        {!isEdit ? (
+            <div className="TodoItem">
 
-      <div className="listTodo">
-        <div className="listTodo__content">
-          <button>check</button>
-          <h3>Here's a task item</h3>
-        </div>
+            <div className="TodoItem__list">
+                <div className="TodoItem__list__content">
+                <button>check</button>
+                <h3 onClick={handleEdit}>{todo.task}</h3>
+                </div>
+
+                <div className="TodoItem__list__button">
+                <button>x</button>
+                </div>
+            </div>
+            </div>
+        )
+        :
+        (
+            <div>
+                <div>
+                    <TodoForm oldTodo={todo} id={id}/>
+                </div>
+            </div>
+        )}
 
 
-        <div className="listTodo__button">
-          <button>edit</button>
-          <button>x</button>
-        </div>
-      </div>
-    </div>
+
+    </>
   );
 }
 

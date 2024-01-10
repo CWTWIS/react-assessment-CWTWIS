@@ -7,11 +7,11 @@ import MyTodoContextProvider from './context/MyTodoContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <LogInContextProvider>
       <MyTodoContextProvider>
         <App />
       </MyTodoContextProvider>
     </LogInContextProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

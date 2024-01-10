@@ -3,7 +3,7 @@ import { useLogIn } from '../context/LogInContext'
 
 function LoginPage() {
     //get from context
-    const {setLoginSuccess} = useLogIn()
+    const {setLoginSuccess, LogIn} = useLogIn()
 
     //set state
     // const [LoginSuccess, setLoginSuccess] = useState(false)
@@ -26,11 +26,13 @@ function LoginPage() {
     const handleSubmit = (event) => {
         console.log('submit');
         event.preventDefault()
-        if (email==='123' && password==='123'){
-            setLoginSuccess(true)
-        }else{
-            setLoginSuccess(false)
-        }
+        LogIn(email, password)
+        // if (email==='babababa@gmail.com' && password==='123456'){
+        //     setLoginSuccess(true)
+        // }else{
+        //     alert("LOGIN UNSUCCESSFUL")
+        //     setLoginSuccess(false)
+        // }
     }
 
 
@@ -47,7 +49,7 @@ function LoginPage() {
             onChange={handleEmailChange}></input>
             <label htmlFor='password'>password</label>
             <input 
-            type='text' 
+            type='password' 
             value={password} 
             id='password' 
             name='password' 

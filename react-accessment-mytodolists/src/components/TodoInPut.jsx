@@ -1,7 +1,7 @@
 import React from "react";
-import { UseMyTodo } from "../context/MyTodoContext";
+import { useMyTodo } from "../context/MyTodoContext";
 function TodoInPut() {
-  const {handleNewTask, handleSubmitTask, task} = UseMyTodo()
+  const {handleNewTask, handleSubmitTask, task, isError} = useMyTodo()
   return (
     <div className="TodoInput">
       <div className="Title">
@@ -12,7 +12,7 @@ function TodoInPut() {
 
       <form 
       className="Form" 
-      // onSubmit={handleSubmitTask}
+      onSubmit={handleSubmitTask}
       >
         <label htmlFor="newTask">new task</label>
         <input 
@@ -22,7 +22,8 @@ function TodoInPut() {
         value={task}
         onChange={handleNewTask}
         ></input>
-        <h5 className="error__addNewTask">ERROR: YOU MUST TYPE SOMETHING</h5>
+        {isError && <h5 className="error__addNewTask">ERROR: YOU MUST TYPE SOMETHING</h5>}
+        
       </form>
     </div>
   );
