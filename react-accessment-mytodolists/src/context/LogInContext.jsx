@@ -4,7 +4,7 @@ import axios from "axios";
 const LogInContext = createContext();
 
 function LogInContextProvider({ children }) {
-  const [LoginSuccess, setLoginSuccess] = useState(false);
+  // const [LoginSuccess, setLoginSuccess] = useState(false);
   const [user, setUser] = useState(null);
 
   //async await fetch api
@@ -23,7 +23,6 @@ function LogInContextProvider({ children }) {
     }
     );
     const data = await res.json();
-    setUser(data.user)
     console.log(data);
     setUser(data.user)
 
@@ -79,7 +78,7 @@ function LogInContextProvider({ children }) {
   };
 
   //pack
-  const sharedObj = { user, setUser, LogOut, LogIn, setLoginSuccess, LoginSuccess};
+  const sharedObj = { user, setUser, LogOut, LogIn};
 
   return (
     <LogInContext.Provider value={sharedObj}>{children}</LogInContext.Provider>

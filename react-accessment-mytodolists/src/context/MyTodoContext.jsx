@@ -11,24 +11,6 @@ function MyTodoContextProvider({ children }) {
   //set state
   const [task, setTask] = useState("");
 
-
-  //=================HARD CODE=======================
-  // const DEFAULT = [
-  //   { 
-  //     task: 'SLEEP',
-  //     status: false
-  //   }, 
-  //   {
-  //     task: 'EAT',
-  //     status: false
-  //   }, 
-  //   {
-  //     task: 'PLAY',
-  //     status: false
-  //   }
-  // ]
-  // const DEFAULT = ['SLEEP', 'EAT', 'PLAY']
-  // const [allTodo, setAllTodo] = useState(DEFAULT)
   const [allTodo, setAllTodo] = useState([])
 
   const [isError, setIsError] = useState(false)
