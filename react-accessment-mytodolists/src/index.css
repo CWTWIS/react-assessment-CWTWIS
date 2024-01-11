@@ -1,7 +1,8 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -20,34 +21,53 @@ code {
 .DefaultDiv{
   margin: auto;
   background: #1E1F25;
-  width: 50%;
+  /* height: 50%; */
+  /* width: 50%; */
+  position: fixed;
+  left: 50vw;
+  top: 50%; 
+  transform: translate(-50%, -50%);
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 40px;
   border-radius: 20px;
+  & > h1 {
+    color: white;
+    text-align: center;
+  }
 }
-.DefaultDiv > h1 {
-  color: white;
-}
+
 label{
   color: #9494B8;
   font-weight: bold;
 }
 .Form {
+  min-width: 400px;
+}
+.Form, .Form__name__first, .Form__name__last, .TodoInput__Form__AddTask {
   display: flex; 
   flex-direction: column;
   gap: 10px;
   padding-bottom: 20px;
+  & > input {
+    background-color: #1E1F25;
+    border-style: none;
+    border-bottom: 1px solid #29292F;
+    color: white; 
+  }
+  & > button {
+    margin-top: 50px;  
+  }
+  & > p {
+    color: white;
+    text-align: center;
+  }
 }
-.Form > input {
-  background-color: #1E1F25;
-  border-style: none;
-  border-bottom: 1px solid #29292F;
-  color: white;
-}
-.Form > button {
-  margin-top: 50px;
+.Form__name{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
 }
 
 button{
@@ -65,12 +85,21 @@ button:hover{
 
 
 /* My todo page */
-.Title{
-  display: flex;
-  justify-content: space-between;
-}
-.Title > h1{
+
+.TodoInput__title{
   color: white;
+}
+.TodoInput__Form__AddTask{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  /* max-height: 80px; */
+  & > .TodoInput__Form__AddTaskBtn {
+    margin: 0;
+    max-height: none !important;
+    min-width: 30px;
+  }
 }
 
 /* Head */
