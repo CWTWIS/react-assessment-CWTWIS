@@ -1,17 +1,24 @@
 import React from "react";
+import { useTodo } from "../context/TodoContext";
 
 function TodoInput() {
+  const {userData, handleNewTask, handleSubmitTask, isError, task} = useTodo()
+  // console.log(userData);
+  let Data = userData
+  if(userData) Data = userData
   return (
     <div className="TodoInput">
       <div className="TodoInput__title">
-        <h1>Welcome,&nbsp;firstname&nbsp;lastname</h1>
+        <h2>Welcome,&nbsp;</h2>
+        <h1 className="TodoInput__title__userName">{Data.firstName}&nbsp;{Data.lastName}</h1>
+        {/* <h1>to Todo</h1> */}
       </div>
 
       <form
         className="Form"
-        //   onSubmit={handleSubmitTask}
+          onSubmit={handleSubmitTask}
       >
-        <h2>My todo</h2>
+        {/* <h2>My todo</h2> */}
         {/* <label htmlFor="newTask">new task</label> */}
         <div className="TodoInput__Form__AddTask">
           <input
@@ -19,8 +26,8 @@ function TodoInput() {
             id="newTask"
             name="newTask"
             placeholder="add your todo"
-            //   value={task}
-            //   onChange={handleNewTask}
+            value={task}
+            onChange={handleNewTask}
           ></input>
           <button
             className="TodoInput__Form__AddTaskBtn"
@@ -31,9 +38,9 @@ function TodoInput() {
           </button>
         </div>
 
-        {/* {isError && ( */}
+        {isError && (
         <h5 className="error__addNewTask">ERROR: YOU MUST TYPE SOMETHING</h5>
-        {/* )} */}
+        )}
       </form>
     </div>
   );

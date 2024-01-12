@@ -1,10 +1,10 @@
 import Router from "./routes/routes";
+import TodoContextProvider from "./context/TodoContext";
 function App() {
   return (
-    <Router/>
-    // <div className="App"> 
-    // Hello
-    // </div>
+    <TodoContextProvider>
+      <Router/>
+    </TodoContextProvider>
   );
 }
 

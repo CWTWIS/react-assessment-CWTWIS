@@ -92,7 +92,7 @@ async function getMe() {
 - [x ] Clean up unused files and code
 - [x ] Install dependencies or packages that you need for this project
 - [x ] Pick some CSS Framework and Install eg. Bootstrap, Tailwind, Scss, Vanilla css or MUI
-- [ ] Setup Well-organized Folder Structure
+- [x ] Setup Well-organized Folder Structure
 - [x ] Using Git and Github for Version Control System
 - [x ] Using Comand Line for run project
 
@@ -105,7 +105,7 @@ async function getMe() {
 
 ### 1C : Precise UI with Design (20pts)
 
-- [ ] Precise UI : Login Page
+- [x ] Precise UI : Login Page
 - [ ] Precise UI : Todo Page
 
 ## Part-2 : Feature and Logic (50pts)
@@ -120,11 +120,11 @@ async function getMe() {
 
 ### 2B : TodoList (35pts)
 
-- [ ] Show Todo List when Render Page (State Management & API)
-- [ ] Can Create Todo (State Management & API)
-- [ ] Can Update Todo (State Management & API)
-- [ ] Can Delete Todo (State Management & API)
-- [ ] Can Logout (State Management & API)
+- [x ] Show Todo List when Render Page (State Management & API)
+- [x ] Can Create Todo (State Management & API)
+- [x ] Can Update Todo (State Management & API)
+- [x ] Can Delete Todo (State Management & API)
+- [x ] Can Logout (State Management & API)
 
 #### suggestion
 
@@ -137,9 +137,9 @@ async function getMe() {
 - [ ] Implement Validation in Todo Page (5pts)
 - [ ] Feature Register and Register Page(20pts)
 - [ ] Using Context API for State Management (10pts)
-- [ ] Using React Router for Routing (10pts)
-- [ ] Auto Login with Local Storage (10pts)
-- [ ] Using Custom Hooks (10pts)
+- [x ] Using React Router for Routing (10pts)
+- [x ] Auto Login with Local Storage (10pts)
+- [x ] Using Custom Hooks (10pts)
 - [ ] Implement Protected Route and Redirect Route (10pts)
 - [ ] New Feature or Amazing UI (Depend on your creativity) (10pts)
 - [ ] Deploy to Vercel or Netlify (10pts)
@@ -157,7 +157,7 @@ async function getMe() {
 - [ ] Good Naming for Variable, Function, Component, etc.
 - [ ] Good Commenting
 - [ ] Implement React Design Pattern and Avoid Anti Pattern
-- [ ] Use Async Await instead of Promise then catch
+- [x ] Use Async Await instead of Promise then catch
 - [ ] Well-organized Folder Structure
 - [ ] Well-organized Git Commit Message
 

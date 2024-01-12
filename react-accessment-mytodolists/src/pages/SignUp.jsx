@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function SignUp() {
   return (
     <div className="DefaultDiv">
-      <h1>SIGN UP</h1>
+      <h1>Welcome to Todo</h1>
       <form
         className="Form"
         // onSubmit={handleSubmit}
