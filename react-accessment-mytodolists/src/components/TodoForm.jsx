@@ -29,7 +29,7 @@ function TodoForm({oldTodo, onClose}) {
       };
   return (
     <div>
-      <form 
+      <form className="Form"
       onSubmit={handleSubmitTask}
       >
         <input 
@@ -37,9 +37,7 @@ function TodoForm({oldTodo, onClose}) {
         value={text} 
         onChange={handleTextChange}
         >
-
         </input>
-        {/* <h3>ERROR: PLEASE TYPE SOMETHING</h3> */}
         {isErrorEdit && <h3>ERROR: PLEASE TYPE SOMETHING</h3>}
       </form>
     </div>

@@ -25,34 +25,23 @@ function Login() {
   const handleSubmit = (event) => {
     console.log('submit');
     event.preventDefault()
-    LogIn(emailOrMobile, password)
+    LogIn()
   }
 
-  function LogIn (emailOrMobile, password){
-    fetch('https://paybox-wnfo.onrender.com/auth/login',{
-      method: "POST",
-      headers: {
-        'Content-Type' : 'application/json'
-      },
-      body: JSON.stringify({emailOrMobile, password})
-    })
-    .then((res)=>res.json())
-    .then((data)=>{
-      console.log(data);
-      console.log(data.message);
-
-      // setUser(data.user)
-      localStorage.setItem("token", data.accessToken)
-      if (!data.message)logInNav()
-      // if (token !== undefined && token !== null) 
-      
-    })
-    .catch((err)=>{
+  const LogIn = async() => {
+    try {
+      const res = await axios.post('https://paybox-wnfo.onrender.com/auth/login', {
+        emailOrMobile: emailOrMobile,
+        password: password,  
+      })
+      console.log(res, "res LOGIN");
+      console.log(res.data);
+      localStorage.setItem("token", res.data.accessToken)
+      if (!res.data.message)logInNav()
+    } catch (err){
       console.log(err);
-      // setUser(null);
       localStorage.removeItem("token")
-    })
-
+    }
   }
   
   return (

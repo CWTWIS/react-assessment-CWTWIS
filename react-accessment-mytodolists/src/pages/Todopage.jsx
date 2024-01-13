@@ -9,7 +9,8 @@ function Todopage() {
   const navigate = useNavigate();
   const LogOut = () => {
     localStorage.removeItem("token")
-    localStorage.removeItem("list")
+    // localStorage.removeItem("refresh")
+    // localStorage.removeItem("list")
     navigate('/login')
   }
 

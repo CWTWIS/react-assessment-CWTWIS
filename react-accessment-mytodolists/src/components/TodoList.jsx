@@ -7,7 +7,6 @@ function TodoList() {
 
   return (
     <div>
-        {/* <h1>TodoList</h1> */}
         <ul>{allTodo.map((todo) => (
           <TodoItem key={todo.id} todo={todo}/>
         ))}

@@ -135,8 +135,8 @@ async function getMe() {
 
 - [ ] Implement Validation in Login Page (5pts)
 - [ ] Implement Validation in Todo Page (5pts)
-- [ ] Feature Register and Register Page(20pts)
-- [ ] Using Context API for State Management (10pts)
+- [x ] Feature Register and Register Page(20pts)
+- [x ] Using Context API for State Management (10pts)
 - [x ] Using React Router for Routing (10pts)
 - [x ] Auto Login with Local Storage (10pts)
 - [x ] Using Custom Hooks (10pts)

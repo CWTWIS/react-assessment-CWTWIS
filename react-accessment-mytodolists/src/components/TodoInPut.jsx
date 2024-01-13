@@ -2,10 +2,9 @@ import React from "react";
 import { useTodo } from "../context/TodoContext";
 
 function TodoInput() {
-  const {userData, handleNewTask, handleSubmitTask, isError, task} = useTodo()
-  // console.log(userData);
+  const { userData, handleNewTask, handleSubmitTask, isError, task} = useTodo()
   let Data = userData
-  if(userData) Data = userData
+  // if(userData) Data = userData
   return (
     <div className="TodoInput">
       <div className="TodoInput__title">
@@ -30,7 +29,7 @@ function TodoInput() {
             onChange={handleNewTask}
           ></input>
           <button
-            className="TodoInput__Form__AddTaskBtn"
+            className="addTask_btn"
             type="submit"
             // onClick={handleSubmitTask}
           >
