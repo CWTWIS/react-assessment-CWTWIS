@@ -1,3 +1,15 @@
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!PLEASE READ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+[/] sign up: didn't add any function to indicate that user sign up success, please have a look at console, if success, there should be "res regis"___________________.\
+[/] login: if success, auto navigate to todo, if not, stay in login page.\
+[/] todo page: BUG! if first login-> todo will not render yet --> have to refresh page 1 time. Also, when log out and login again, todo list that first render belongs to previous user --> have to refresh page 1 time. CRUD work just fine but when refresh page or log out and login again order of todo will be changed.\
+PS. didn't deploy to either using Github pages or Netlify since I don't know how to create it properly, tried both but deploy failed. TT-TT  
+
+
+
+
+
+
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/rXoA-UQB)
 # React Assessment : My Todo List (CC16)
 
