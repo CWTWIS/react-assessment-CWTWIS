@@ -1,7 +1,8 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,38 +17,64 @@ code {
     monospace;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+}
 /* LOG IN */
 .DefaultDiv{
-  margin: auto;
+  margin: 0;
   background: #1E1F25;
-  width: 50%;
+  /* height: 50%; */
+  /* width: 50%; */
+  position: absolute;
+  left: 50%;
+  top: 50%; 
+  transform: translate(-50%, -50%);
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 40px;
   border-radius: 20px;
+  & > h1 {
+    color: white;
+    text-align: center;
+  }
 }
-.DefaultDiv > h1 {
-  color: white;
-}
+
 label{
   color: #9494B8;
-  font-weight: bold;
+  font-weight: 900;
 }
 .Form {
+  min-width: 400px;
+}
+.Form, .Form__name__first, .Form__name__last, .TodoInput__Form__AddTask{
   display: flex; 
   flex-direction: column;
   gap: 10px;
   padding-bottom: 20px;
+  & > input {
+    background-color: #1E1F25;
+    border-style: none;
+    border-bottom: 1px solid #29292F;
+    color: white; 
+    padding: 5px;
+  }
+  & > button {
+    margin-top: 50px;  
+  }
+  & > p {
+    color: white;
+    text-align: center;
+    font-weight: 100;
+  }
 }
-.Form > input {
-  background-color: #1E1F25;
-  border-style: none;
-  border-bottom: 1px solid #29292F;
-  color: white;
-}
-.Form > button {
-  margin-top: 50px;
+.Form__name{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
 }
 
 button{
@@ -59,39 +86,83 @@ button{
   background-color: #29292F;
 }
 button:hover{
-  background-color: white;
-  color:#29292F ;
+  background-color: #9494B8;
+  color:white;
+  cursor: pointer;
 }
+
 
 
 /* My todo page */
-.Title{
+
+.TodoInput__title{
   display: flex;
-  justify-content: space-between;
-}
-.Title > h1{
+  align-items: baseline;
+
   color: white;
+}
+.TodoInput__title__userName{
+    color: #9494B8;
+}
+.TodoInput__Form__AddTask{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-height: 60px;
 }
 
 /* Head */
 /* Input */
 /* List */
+ul{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-right: 20px;
+  height: 300px;
+  white-space: nowrap;
+  overflow-y:scroll;
+}
+/* Item */
 .TodoItem__list{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 .TodoItem__list__content{
   display: flex;
   gap: 10px;
-  & > h3 {
+  &> .uncheck_btn, .check_btn, .del_btn{
     color: white;
+    border: 2px solid #9494B8;
+    width: 40px;
+    & > :hover{
+      background-color: none;
+    }
+  }
+  & > span {
+    color: white;
+    min-width: 250px;
+    padding: 5px;
+    display: grid;
+    align-items: center;
+    &:hover{
+      border-radius: 20px;
+      color: white;
+      background: #9494B8;
+    }
   }
 }
+
 /* Button */
-.TodoItem__list__button{
-  display: flex;
-  gap: 10px;
+.del_btn, .addTask_btn{
+  color: #9494B8;
+  border: 2px solid #9494B8;
+  width: 40px;
+  & > :hover{
+    background-color: none;
+  }
 }
 
 

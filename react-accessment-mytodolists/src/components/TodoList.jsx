@@ -1,16 +1,18 @@
-import React from "react";
-import { useMyTodo } from "../context/MyTodoContext";
-import TodoItem from "./TodoItem";
+import React, { useEffect } from 'react'
+import { useTodo } from '../context/TodoContext'
+import TodoItem from './TodoItem'
 
 function TodoList() {
-  const {allTodo} = useMyTodo()
-  console.log(allTodo);
+    const {allTodo} = useTodo()
+
   return (
-    <ul>{allTodo.map((todo, id) => (
-       <TodoItem key={todo.id} id={id} todo={todo}/>
-    ))}
-    </ul>
-  );
+    <div>
+        <ul>{allTodo.map((todo) => (
+          <TodoItem key={todo.id} todo={todo}/>
+        ))}
+        </ul> 
+    </div>
+  )
 }
 
-export default TodoList;
+export default TodoList
